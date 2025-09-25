@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrancaYa</title>
+    <!-- CDN de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente de Google: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos CSS integrados -->
+    <style>
+        html {
+            scroll-behavior: smooth; /* Habilita el desplazamiento suave */
+        }
+        .header-bg {
+            background-color: #d1dbeb;
+        }
+        .section-1-bg {
+            background-image: url(/Landing_Page_Img_2.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-gray-900 transition-colors duration-300">
+    
+    <!-- Encabezado reutilizable -->
+    <header class="fixed top-0 z-50 w-full py-4 px-6 shadow-md flex flex-col items-center md:flex-row md:justify-between header-bg gap-2 md:gap-4">
+        <!-- Línea 1: Título -->
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 flex-shrink-0">
+            <a href="index.html">
+                <span class="text-blue-500">Arranca</span><span class="text-orange-500">Ya</span>
+            </a>
+        </h2>
+        
+        <!-- Línea 2: Barra de búsqueda -->
+        <input type="search" id="searchBar" placeholder="¿Qué quieres aprender hoy?" class="w-full md:w-auto md:flex-grow px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:border-indigo-500 transition-colors duration-200 min-w-0">
+    
+        <!-- Línea 3: Botones de Acción -->
+        <div class="flex items-center justify-center md:justify-end w-full md:w-auto gap-2 md:gap-4">
+
+            <!-- Botón "Inicia Sesión" -->
+            <a href="Log_in.html" class="bg-transparent hover:bg-green-100 text-green-700 font-bold py-2 px-4 rounded-full border border-green-700 focus:outline-none text-sm">
+                 Inicia Sesión
+            </a>
+    
+            <!-- Botón "Registrarse" -->
+            <a href="Register_form.html" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full focus:outline-none text-sm">
+                Registrarse
+            </a>
+    
+            <!-- Menú desplegable principal -->
+            <div class="relative">
+                <!-- Botón del menú -->
+                <button id="menuButton" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full focus:outline-none flex items-center space-x-2">
+                    <div class="space-y-1">
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                    </div>
+                    <span class="text-sm md:text-base">Menú</span>
+                </button>
+                <!-- Contenido del menú -->
+                <div id="menuDropdown" class="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 hidden z-50">
+                    <a href="Profile.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mi Perfil</a>
+                    <a href="Rewards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">¡Tu camino recorrido!</a>
+                    <a href="Allies.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Los que te impulsan</a>
+                    <a href="Main_Options.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Opciones Principales</a>
+                    <a href="Finance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lo que ganas y gastas</a>
+                    <hr class="my-1">
+                    <a href="Courses.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Capacítate fácil</a>
+                    <a href="Advice.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Orientación fácil</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección 1: Principal con imagen de fondo -->
+    <div class="relative w-full section-1-bg pt-56 md:pt-24 min-h-screen flex flex-col justify-center">
+        <!-- Título principal -->
+        <h1 class="mb-24 p-8 md:p-12 text-center w-full text-6xl md:text-7xl font-extrabold leading-tight text-white">
+            Desbloquea tu potencial emprendedor
+        </h1>
+        
+        <!-- Botón movido al cuerpo -->
+        <div class="flex justify-center -mt-20 mb-12 relative z-20">
+            <a href="#pasos-faciles" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full focus:outline-none text-lg shadow-lg transition transform hover:scale-105 duration-300 whitespace-nowrap">
+                 Usar la app es fácil, te enseño cómo
+            </a>
+        </div>
+
+        <!-- Contenedor del contenido principal -->
+        <main class="relative z-10 flex flex-col items-center justify-center p-4 pb-16 space-y-8 w-full">
+            <!-- Contenedor de los divs de contenido -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4 w-full max-w-7xl mx-auto">
+                
+                <!-- ¿No sabes ni por dónde empezar? -->
+                <div class="bg-white/75 p-8 md:p-12 rounded-2xl shadow-2xl text-center border border-gray-200 flex flex-col justify-between order-2 md:order-none">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+                        ¿No sabes ni por dónde empezar?
+                    </h2>
+                    <p class="text-md text-gray-600 mb-6">
+                        Te ayudamos con nuestro asistente inteligente
+                    </p>
+                    <button id="newSectionButton1" class="bg-green-800 hover:bg-green-900 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105 duration-300 focus:outline-none focus:ring-4 focus:ring-green-700 focus:ring-opacity-50">
+                        <a href="Register_form.html">Pruébalo gratis</a>
+                    </button>
+                </div>
+
+                <!-- ¿Cansado de hacer cuentas? -->
+                <div class="bg-white/75 p-8 md:p-12 rounded-2xl shadow-2xl text-center border border-gray-200 flex flex-col justify-between order-1 md:order-none">
+                    <!-- Título y descripción -->
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4 leading-tight text-gray-900">
+                        ¿Cansado de hacer cuentas? 
+                    </h2>
+                    <p id="message" class="text-lg md:text-xl text-gray-600 mb-6">
+                        ¡Una imagen o audio del recibo es suficiente!
+                    </p>
+
+                    <!-- Botón interactivo -->
+                    <button id="actionButton" class="bg-green-800 hover:bg-green-900 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105 duration-300 focus:outline-none focus:ring-4 focus:ring-green-700 focus:ring-opacity-50">
+                        <a href="Register_form.html">Pruébalo gratis</a>
+                    </button>
+                </div>
+
+                <!-- ¿Quieres que a tu negocio le vaya mejor? -->
+                <div class="bg-white/75 p-8 md:p-12 rounded-2xl shadow-2xl text-center border border-gray-200 flex flex-col justify-between order-3 md:order-none">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+                        ¿Quieres que a tu negocio le vaya mejor?
+                    </h2>
+                    <p class="text-md text-gray-600 mb-6">
+                        Te damos los mejores tips para vender más y que el dinero te rinda
+                    </p>
+                    <button id="newSectionButton2" class="bg-green-800 hover:bg-green-900 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105 duration-300 focus:outline-none focus:ring-4 focus:ring-green-700 focus:ring-opacity-50">
+                        <a href="Register_form.html">Pruébalo gratis</a>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Sección 2: Infografía con fondo sólido -->
+    <div class="w-full bg-slate-100 min-h-screen flex flex-col justify-center">
+        <section id="pasos-faciles" class="w-full max-w-4xl mx-auto py-16 px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-8">Pasos fáciles pa’ usar la app.</h2>
+            <div class="bg-slate-300/75 p-8 md:p-12 rounded-2xl shadow-2xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Registra lo que ganas y lo que gastas sin complicarte, en 3 pasos.</h2>
+                <div class="flex flex-col space-y-10">
+                    
+                    <!-- Step 1 -->
+                    <div class="flex items-center gap-6">
+                        <div class="bg-white rounded-full h-24 w-24 flex-shrink-0 flex items-center justify-center border-4 border-blue-500 shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">1. Crea tu cuenta</h3>
+                            <p class="mt-2 text-gray-700">Selecciona "Pruébalo gratis" o "Registrarse"</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex items-center gap-6">
+                        <div class="bg-white rounded-full h-24 w-24 flex-shrink-0 flex items-center justify-center border-4 border-green-500 shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">2. Escoge cómo vas a apuntar lo que gastas o ganas.</h3>
+                            <p class="mt-2 text-gray-700">Ya sea con foto o hablándole, registra tu ticket</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex items-center gap-6">
+                        <div class="bg-white rounded-full h-24 w-24 flex-shrink-0 flex items-center justify-center border-4 border-yellow-500 shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">3. Carga la información.</h3>
+                            <p class="mt-2 text-gray-700">El sistema guardará la información por ti</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript para la interactividad -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lógica del menú desplegable principal
+            const menuButton = document.getElementById('menuButton');
+            const menuDropdown = document.getElementById('menuDropdown');
+    
+            // Alternar la visibilidad del menú desplegable
+            if (menuButton) {
+                menuButton.addEventListener('click', (event) => {
+                    if (menuDropdown) {
+                        menuDropdown.classList.toggle('hidden');
+                    }
+                    event.stopPropagation(); // Evita que el evento de clic de la ventana se active inmediatamente
+                });
+            }
+    
+            // Cerrar el menú desplegable si el usuario hace clic fuera de él
+            window.addEventListener('click', (event) => {
+                if (menuDropdown && menuButton) {
+                    if (!menuDropdown.contains(event.target) && !menuButton.contains(event.target)) {
+                        menuDropdown.classList.add('hidden');
+                    }
+                }
+            });
+
+            // Lógica de la barra de búsqueda (ejemplo)
+            const searchBar = document.getElementById('searchBar');
+            if (searchBar) {
+                searchBar.addEventListener('input', () => {
+                    console.log("Searching for: " + searchBar.value);
+                });
+            }
+
+            // Lógica para botones del contenido principal (si es necesario)
+            const actionButton = document.getElementById('actionButton');
+            const message = document.getElementById('message');
+            if (actionButton) {
+                actionButton.addEventListener('click', () => {
+                    if (message) {
+                        message.textContent = "You clicked the button! Interaction complete.";
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
+
