@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrancaYa</title>
+    <!-- CDN de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente de Google: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos CSS integrados -->
+    <style>
+        body {
+            background-image: url(/Landing_Page_Img_2.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .header-bg {
+            background-color: #d1dbeb;
+        }
+        /* Estilos para el modal */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            text-align: left;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-gray-900 transition-colors duration-300 relative">
+    
+    <!-- Encabezado reutilizable -->
+    <header class="fixed top-0 z-50 w-full py-4 px-6 shadow-md flex flex-col items-center md:flex-row md:justify-between header-bg gap-2 md:gap-4">
+        <!-- Línea 1: Título -->
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 flex-shrink-0">
+            <a href="index.html">
+                <span class="text-blue-500">Arranca</span><span class="text-orange-500">Ya</span>
+            </a>
+        </h2>
+        
+        <!-- Línea 2: Barra de búsqueda -->
+        <input type="search" id="searchBar" placeholder="¿Qué quieres aprender hoy?" class="w-full md:w-auto md:flex-grow px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:border-indigo-500 transition-colors duration-200 min-w-0">
+    
+        <!-- Línea 3: Buttons & Menu -->
+        <div class="flex items-center justify-center md:justify-end w-full md:w-auto gap-4 flex-wrap">
+            <!-- User Level Info -->
+            <div class="text-base font-semibold text-gray-700 whitespace-nowrap">
+                <a href="Rewards.html" class="hover:underline">
+                    Tú nivel: <span class="font-bold text-green-600">Primeros pasos</span>
+                </a>
+            </div>
+             <!-- Menú desplegable principal -->
+            <div class="relative">
+                <!-- Botón del menú -->
+                <button id="menuButton" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full focus:outline-none flex items-center space-x-2">
+                    <div class="space-y-1">
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                    </div>
+                    <span class="text-sm md:text-base">Menú</span>
+                </button>
+                <!-- Contenido del menú -->
+                <div id="menuDropdown" class="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 hidden z-50">
+                    <a href="Profile.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mi Perfil</a>
+                    <a href="Allies.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Los que te impulsan</a>
+                    <a href="Rewards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">¡Tu camino recorrido!</a>
+                    <a href="Finance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lo que ganas y gastas</a>
+                    <a href="Main_Options.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lo básico para empezar</a>
+                    <hr class="my-1">
+                    <a href="Courses.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cursos</a>
+                    <a href="Advice.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Asesorías</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenedor del contenido principal -->
+    <main class="relative z-10 flex-grow flex flex-col items-center justify-center p-4 pt-48 gap-4">
+        <h1 class="text-3xl font-bold mb-4 text-white">Videos cortos para mejorar tu negocio</h1>
+        <!-- Contenedor de la cuadrícula para los videos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+            <!-- Div 1: Video 1 -->
+            <div class="bg-white/75 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                <div class="relative w-full h-40 rounded-lg overflow-hidden mb-4">
+                    <img src="https://placehold.co/600x400/50C878/000000?text=Clientes" alt="Imagen de clientes" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/50 transition-all duration-300 opacity-100 group-hover:opacity-100">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold">Cómo hacer que tu negocio jale</h3>
+                <p class="text-gray-600 mt-2">Aprende a atraer más gente y hacer que tu puesto se llene.</p>
+            </div>
+            <!-- Div 2: Video 2 -->
+            <div class="bg-white/75 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                <div class="relative w-full h-40 rounded-lg overflow-hidden mb-4">
+                    <img src="https://placehold.co/600x400/90EE90/000000?text=Manejo+de+dinero" alt="Miniatura de video 2" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/50 transition-all duration-300 opacity-100 group-hover:opacity-100">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold">Para que te rinda la lana</h3>
+                <p class="text-gray-600 mt-2">Te decimos cómo gastar menos para que te quede más dinero en la bolsa.</p>
+            </div>
+            <!-- Div 3: Video 3 -->
+            <div class="bg-white/75 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                <div class="relative w-full h-40 rounded-lg overflow-hidden mb-4">
+                    <img src="https://placehold.co/600x400/ADD8E6/000000?text=Cuentas" alt="Miniatura de video 3" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/50 transition-all duration-300 opacity-100 group-hover:opacity-100">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold">No te pierdas en las cuentas</h3>
+                <p class="text-gray-600 mt-2">Una forma fácil de saber cuánto entra y cuánto sale para que no te quedes en ceros.</p>
+            </div>
+            <!-- Div 4: Video 4 -->
+            <div class="bg-white/75 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                <div class="relative w-full h-40 rounded-lg overflow-hidden mb-4">
+                    <img src="https://placehold.co/600x400/A020F0/000000?text=Vender+con+el+celular" alt="Miniatura de video 4" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/50 transition-all duration-300 opacity-100 group-hover:opacity-100">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold">Vende por el celular</h3>
+                <p class="text-gray-600 mt-2">Te enseñamos a usar tu teléfono para que tus clientes te encuentren.</p>
+            </div>
+            <!-- Div 5: Video 5 -->
+            <div class="bg-white/75 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                <div class="relative w-full h-40 rounded-lg overflow-hidden mb-4">
+                    <img src="https://placehold.co/600x400/FF5733/000000?text=Crédito" alt="Miniatura de video 5" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/50 transition-all duration-300 opacity-100 group-hover:opacity-100">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold">El crédito para que crezca tu negocio</h3>
+                <p class="text-gray-600 mt-2">Una guía sencilla para que no te hagan chanchullo al pedir un préstamo.</p>
+            </div>
+            <!-- Div 6: Video 6 -->
+            <div class="bg-white/75 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                <div class="relative w-full h-40 rounded-lg overflow-hidden mb-4">
+                    <img src="https://placehold.co/600x400/8A2BE2/000000?text=Planeación" alt="Miniatura de video 6" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/50 transition-all duration-300 opacity-100 group-hover:opacity-100">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold">Prepara tu futuro de a poco</h3>
+                <p class="text-gray-600 mt-2">Crea un plan para que tu negocio crezca pasito a pasito y te vaya mejor.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para mostrar resultados -->
+    <div id="resultsModal" class="modal">
+        <div class="modal-content">
+            <button id="closeModal" class="absolute top-2 right-4 text-gray-500 hover:text-gray-900 text-3xl font-bold">&times;</button>
+            <h3 class="font-bold text-2xl mb-4">Resultados del Escaneo</h3>
+            <div id="modalContent">
+                <!-- El contenido se cargará aquí dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript para la interactividad -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lógica del menú desplegable
+            const dropdownButton = document.getElementById('dropdownButton');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+    
+            // Alternar la visibilidad del menú desplegable
+            if (dropdownButton) {
+                dropdownButton.addEventListener('click', (event) => {
+                    if (dropdownMenu) {
+                        dropdownMenu.classList.toggle('hidden');
+                    }
+                    event.stopPropagation();
+                });
+            }
+    
+            // Cerrar el menú desplegable si el usuario hace clic fuera de él
+            window.addEventListener('click', (event) => {
+                if (dropdownMenu && dropdownButton) {
+                    if (!dropdownMenu.contains(event.target) && !dropdownButton.contains(event.target)) {
+                        dropdownMenu.classList.add('hidden');
+                    }
+                }
+            });
+            
+            // Lógica de los botones del header
+            const searchBar = document.getElementById('searchBar');
+            const profileButton = document.getElementById('profileButton');
+            const mainOptionsButton = document.getElementById('mainOptionsButton');
+    
+            if (profileButton) {
+                profileButton.addEventListener('click', () => {
+                    alert('El botón de Mi perfil ha sido presionado.');
+                });
+            }
+
+            if (mainOptionsButton) {
+                mainOptionsButton.addEventListener('click', () => {
+                    window.location.href = 'Main_Options.html';
+                });
+            }
+    
+            if (searchBar) {
+                searchBar.addEventListener('input', () => {
+                    console.log("Searching for: " + searchBar.value);
+                });
+            }
+
+            // Lógica del modal
+            const resultsModal = document.getElementById('resultsModal');
+            const closeModalBtn = document.getElementById('closeModal');
+    
+            // Función para mostrar el modal
+            function showModal(content) {
+                const modalContent = document.getElementById('modalContent');
+                modalContent.innerHTML = content;
+                resultsModal.style.display = 'flex';
+            }
+    
+            // Función para cerrar el modal
+            function hideModal() {
+                    resultsModal.style.display = 'none';
+                }
+    
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', hideModal);
+            }
+    
+            // Cierra el modal si el usuario hace clic fuera de él
+            window.addEventListener('click', (event) => {
+                if (event.target === resultsModal) {
+                    hideModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

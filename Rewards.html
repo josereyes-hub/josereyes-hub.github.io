@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF--8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrancaYa - Progreso Emprendedor</title>
+    <!-- CDN de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente de Google: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Estilos CSS integrados -->
+    <style>
+        body {
+            background-image: url(/Landing_Page_Img_2.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #374151; /* Fallback de color de fondo */
+        }
+        .header-bg {
+            background-color: #d1dbeb;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-gray-900 transition-colors duration-300 relative pt-56 md:pt-24">
+
+    <!-- Encabezado con botones, barra de búsqueda y menú desplegable -->
+    <header class="fixed top-0 z-50 w-full py-4 px-6 rounded-b-xl shadow-md flex flex-col items-center md:flex-row md:justify-between header-bg gap-2 md:gap-4">
+        <!-- Línea 1: Título -->
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 flex-shrink-0">
+            <a href="index.html">
+            <span class="text-blue-500">Arranca</span><span class="text-orange-500">Ya</span>
+            </a>
+        </h2>
+        
+        <!-- Línea 2: Barra de búsqueda -->
+        <input type="search" id="searchBar" placeholder="¿Qué quieres aprender hoy?" class="w-full md:w-auto md:flex-grow px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:border-indigo-500 transition-colors duration-200 min-w-0">
+
+        <!-- Línea 3: User Info & Menu -->
+        <div class="flex items-center justify-center md:justify-end w-full md:w-auto gap-4 flex-wrap">
+            <!-- User Level Info -->
+            <div class="text-base font-semibold text-gray-700 whitespace-nowrap">
+                <a href="Rewards.html" class="hover:underline">
+                    Tú nivel: <span class="font-bold text-green-600">Primeros pasos</span>
+                </a>
+            </div>
+
+            <!-- Menú desplegable principal -->
+            <div class="relative">
+                <!-- Botón del menú con icono de hamburguesa y texto -->
+                <button id="menuButton" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full focus:outline-none flex items-center space-x-2">
+                    <div class="space-y-1">
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                    </div>
+                    <span class="text-sm md:text-base">Menú</span>
+                </button>
+                <!-- Contenido del menú desplegable -->
+                <div id="menuDropdown" class="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 hidden z-50">
+                    <a href="Profile.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mi Perfil</a>
+                    <a href="Allies.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Los que te impulsan</a>
+                    <a href="Rewards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">¡Tu camino recorrido!</a>
+                    <a href="Finance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lo que ganas y gastas</a>
+                    <a href="Main_Options.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Opciones Principales</a>
+                    <hr class="my-1">
+                    <a href="Courses.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cursos</a>
+                    <a href="Advice.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Asesorías</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal - Progreso Gamificado -->
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        <h1 class="text-4xl font-bold text-white text-center mb-8">¡Tu camino recorrido!</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Tarjeta de Puntuación General -->
+            <div class="bg-white/75 backdrop-blur-sm p-6 rounded-xl shadow-lg flex flex-col">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Resumen General</h2>
+                <div class="flex-grow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-lg text-gray-600">Puntuación Total</p>
+                            <p class="text-5xl font-bold text-blue-600">500 Puntos</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-lg text-gray-600">Tu Nivel</p>
+                            <p class="text-2xl font-bold text-green-600">Primeros Pasos</p>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <p class="text-sm text-gray-500 mb-1">Progreso al siguiente nivel: 500 / 2000</p>
+                        <div class="w-full bg-gray-200/75 rounded-full h-4">
+                            <div class="bg-blue-500 h-4 rounded-full" style="width: 25%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Desglose de Puntos -->
+            <div class="bg-white/75 backdrop-blur-sm p-6 rounded-xl shadow-lg flex flex-col">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">¿De dónde vienen tus Puntos?</h2>
+                <div class="space-y-4 flex-grow flex flex-col">
+                    <a href="#" class="block w-full text-left p-4 bg-gray-50/75 hover:bg-gray-100/75 rounded-lg transition-colors border border-gray-200">
+                       <div class="flex justify-between items-center">
+                            <p class="font-semibold text-gray-700">📱 Así se usa, bien fácil <span class="text-sm font-normal block text-gray-500">(Aprende a manejar la App)</span></p>
+                            <p class="font-bold text-blue-500">250 Puntos</p>
+                        </div>
+                    </a>
+                    <a href="#" class="block w-full text-left p-4 bg-gray-50/75 hover:bg-gray-100/75 rounded-lg transition-colors border border-gray-200">
+                        <div class="flex justify-between items-center">
+                            <p class="font-semibold text-gray-700">🧾 ¡Escanea tu ticket aquí!</p>
+                            <p class="font-bold text-green-500">150 Puntos</p>
+                        </div>
+                    </a>
+                    <a href="Allies.html" class="block w-full text-left p-4 bg-gray-50/75 hover:bg-gray-100/75 rounded-lg transition-colors border border-gray-200">
+                        <div class="flex justify-between items-center">
+                            <p class="font-semibold text-gray-700">🤝 ¡Los que te impulsan!</p>
+                            <p class="font-bold text-orange-500">50 Puntos</p>
+                        </div>
+                    </a>
+                     <a href="#" class="block w-full text-left p-4 bg-gray-50/75 hover:bg-gray-100/75 rounded-lg transition-colors border border-gray-200">
+                        <div class="flex justify-between items-center">
+                            <p class="font-semibold text-gray-700">💡 ¡Tips rápidos para tú negocio aquí!</p>
+                            <p class="font-bold text-purple-500">50 Puntos</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Leaderboard -->
+            <div class="bg-white/75 backdrop-blur-sm p-6 rounded-xl shadow-lg flex flex-col">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Los Más Aplicados</h2>
+                <ul class="space-y-4 flex-grow">
+                    <li class="flex items-center justify-between p-2 bg-gray-100/75 rounded-lg">
+                        <div class="flex items-center">
+                            <span class="font-bold text-gray-500 mr-3">1.</span>
+                            <img src="https://placehold.co/40x40/CBD5E0/4A5568?text=S" alt="User" class="w-8 h-8 rounded-full mr-3">
+                            <p class="text-gray-700">Sofía Hernández</p>
+                        </div>
+                        <p class="font-bold text-gray-800">1250 Puntos</p>
+                    </li>
+                    <li class="flex items-center justify-between p-2 bg-gray-100/75 rounded-lg">
+                         <div class="flex items-center">
+                            <span class="font-bold text-gray-500 mr-3">2.</span>
+                            <img src="https://placehold.co/40x40/A0AEC0/4A5568?text=M" alt="User" class="w-8 h-8 rounded-full mr-3">
+                            <p class="text-gray-700">Mateo García</p>
+                        </div>
+                        <p class="font-bold text-gray-800">870 Puntos</p>
+                    </li>
+                    <li class="flex items-center justify-between p-2 bg-blue-100/75 rounded-lg">
+                        <div class="flex items-center">
+                            <span class="font-bold text-blue-600 mr-3">3.</span>
+                            <img src="https://placehold.co/40x40/E2E8F0/4A5568?text=U" alt="User" class="w-8 h-8 rounded-full mr-3">
+                            <p class="font-bold text-gray-800">Tú</p>
+                        </div>
+                        <p class="font-bold text-gray-800">500 Puntos</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Tarjeta de Logros Recientes -->
+            <div class="bg-white/75 backdrop-blur-sm p-6 rounded-xl shadow-lg flex flex-col">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Tus Medallas</h2>
+                <div class="flex-grow flex items-center justify-around text-center flex-wrap gap-4">
+                    <div>
+                        <div class="text-4xl">📱</div>
+                        <p class="text-xs font-semibold mt-1">App Dominada</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl">🧾</div>
+                        <p class="text-xs font-semibold mt-1">Primer Ticket</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl">🤝</div>
+                        <p class="text-xs font-semibold mt-1">Socio Clave</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl">💡</div>
+                        <p class="text-xs font-semibold mt-1">Tip Aplicado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Recompensas por Nivel -->
+        <div class="mt-8 bg-white/75 backdrop-blur-sm p-6 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Recompensas al Subir de Nivel</h2>
+            <div class="overflow-x-auto">
+                <div class="grid grid-cols-2 gap-4 font-bold text-gray-700 p-2 text-sm md:text-base">
+                    <div>Nivel</div>
+                    <div class="text-center">Recompensa al Completar 🏆</div>
+                </div>
+                <hr>
+                <div class="space-y-2 mt-2">
+                    <div class="grid grid-cols-2 gap-4 items-center p-2 rounded-lg hover:bg-gray-50/75 text-sm md:text-base">
+                        <div class="font-bold text-green-600">Primeros Pasos</div>
+                        <div class="text-center font-semibold text-indigo-600">Acceso a 1 curso premium</div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 items-center p-2 rounded-lg hover:bg-gray-50/75 text-sm md:text-base">
+                        <div class="font-bold text-blue-600">Dando Forma al Negocio</div>
+                        <div class="text-center font-semibold text-indigo-600">Acceso a 3 cursos premium</div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 items-center p-2 rounded-lg hover:bg-gray-50/75 text-sm md:text-base">
+                        <div class="font-bold text-purple-600">Líder en tu Zona</div>
+                        <div class="text-center font-semibold text-indigo-600">Plan Básico gratis por 1 Mes</div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 items-center p-2 rounded-lg hover:bg-gray-50/75 text-sm md:text-base">
+                        <div class="font-bold text-yellow-500">Un Ejemplo a Seguir</div>
+                        <div class="text-center font-semibold text-indigo-600">Plan Básico gratis por 3 Meses</div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 items-center p-2 rounded-lg hover:bg-gray-50/75 text-sm md:text-base">
+                        <div class="font-bold text-indigo-600">Jugando en las Grandes Ligas</div>
+                        <div class="text-center font-semibold text-indigo-600">1 Mes gratis de Premium</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Descripción de Niveles -->
+        <div class="mt-8 bg-white/75 backdrop-blur-sm p-6 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">El Camino del Emprendedor</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-bold text-lg text-green-600">Primeros Pasos (0 - 1,999 Puntos)</h3>
+                    <p class="text-gray-600">Tienes la idea y todas las ganas. Estás poniendo los cimientos, aprendiendo cómo se mueve el negocio y para dónde quieres ir.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-blue-600">Dando Forma al Negocio (2,000 - 4,999 Puntos)</h3>
+                    <p class="text-gray-600">¡Tu idea ya camina! Estás consiguiendo tus primeros clientes, viendo que tu producto sí gusta y buscando la forma de que el negocio se mantenga solo.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-purple-600">Líder en tu Zona (5,000 - 9,999 Puntos)</h3>
+                    <p class="text-gray-600">Ya te conocen en tu área. La gente ubica tu marca y es hora de hacer crecer el changarro y buscar más gente que te ayude.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-yellow-500">Un Ejemplo a Seguir (10,000 - 19,999 Puntos)</h3>
+                    <p class="text-gray-600">Eres de los buenos en lo que haces. Tu negocio está creciendo rápido y otros te buscan como ejemplo.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-indigo-600">Jugando en las Grandes Ligas (20,000+ Puntos)</h3>
+                    <p class="text-gray-600">Tu impacto es enorme. No solo eres líder, estás cambiando las reglas del juego y dejando una huella para los que vienen.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript para la interactividad -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lógica del nuevo menú desplegable
+            const menuButton = document.getElementById('menuButton');
+            const menuDropdown = document.getElementById('menuDropdown');
+    
+            // Alternar la visibilidad del menú desplegable
+            if (menuButton) {
+                menuButton.addEventListener('click', (event) => {
+                    if (menuDropdown) {
+                        menuDropdown.classList.toggle('hidden');
+                    }
+                    event.stopPropagation();
+                });
+            }
+    
+            // Cerrar el menú desplegable si el usuario hace clic fuera de él
+            window.addEventListener('click', (event) => {
+                if (menuDropdown && menuButton) {
+                    if (!menuDropdown.contains(event.target) && !menuButton.contains(event.target)) {
+                        menuDropdown.classList.add('hidden');
+                    }
+                }
+            });
+            
+            // Lógica de la barra de búsqueda
+            const searchBar = document.getElementById('searchBar');
+            if (searchBar) {
+                searchBar.addEventListener('input', () => {
+                    console.log("Searching for: " + searchBar.value);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
