@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrancaYa - Alianzas</title>
+    <!-- CDN de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente de Google: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos CSS integrados -->
+    <style>
+        body {
+            background-image: url(/Landing_Page_Img_2.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .header-bg {
+            background-color: #d1dbeb;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-gray-900 transition-colors duration-300 relative pt-80 md:pt-24">
+
+    <!-- Encabezado reutilizable -->
+    <header class="fixed top-0 z-50 w-full py-4 px-6 shadow-md flex flex-col items-center md:flex-row md:justify-between header-bg gap-2 md:gap-4">
+        <!-- Línea 1: Título -->
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 flex-shrink-0">
+            <a href="index.html">
+                <span class="text-blue-500">Arranca</span><span class="text-orange-500">Ya</span>
+            </a>
+        </h2>
+        
+        <!-- Línea 2: Barra de búsqueda -->
+        <input type="search" id="searchBar" placeholder="¿Qué quieres aprender hoy?" class="w-full md:w-auto md:flex-grow px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:border-indigo-500 transition-colors duration-200 min-w-0">
+    
+        <!-- Línea 3: Buttons & Menu -->
+        <div class="flex items-center justify-center md:justify-end w-full md:w-auto gap-4 flex-wrap">
+            <!-- User Level Info -->
+            <div class="text-base font-semibold text-gray-700 whitespace-nowrap">
+                <a href="Rewards.html" class="hover:underline">
+                    Tú nivel: <span class="font-bold text-green-600">Primeros pasos</span>
+                </a>
+            </div>
+             <!-- Menú desplegable principal -->
+            <div class="relative">
+                <!-- Botón del menú -->
+                <button id="menuButton" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full focus:outline-none flex items-center space-x-2">
+                    <div class="space-y-1">
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                    </div>
+                    <span class="text-sm md:text-base">Menú</span>
+                </button>
+                <!-- Contenido del menú -->
+                <div id="menuDropdown" class="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 hidden z-50">
+                    <a href="Profile.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mi Perfil</a>
+                    <a href="Allies.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Los que te impulsan</a>
+                    <a href="Rewards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">¡Tu camino recorrido!</a>
+                    <a href="Finance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lo que ganas y gastas</a>
+                    <a href="Main_Options.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Opciones Principales</a>
+                    <hr class="my-1">
+                    <a href="Courses.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cursos</a>
+                    <a href="Advice.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Asesorías</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal: Alianzas Estratégicas -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white/75 backdrop-blur-sm rounded-2xl shadow-lg p-6 md:p-8 max-w-7xl mx-auto">
+            
+            <!-- Título y Descripción -->
+            <div class="text-center mb-10">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800">Los que te Impulsan</h1>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                    Conoce a los negocios y emprendedores que, como tú, buscan crecer. Aprovecha los beneficios y descuentos exclusivos que nuestros aliados tienen para ti.
+                </p>
+            </div>
+
+            <!-- Filtros de Búsqueda -->
+            <div class="mb-8 flex flex-col md:flex-row justify-center items-center gap-4">
+                <span class="font-semibold text-gray-700">Filtrar por categoría:</span>
+                <div class="flex flex-wrap justify-center gap-2">
+                    <button class="bg-blue-500 text-white py-2 px-4 rounded-full text-sm hover:bg-blue-600 focus:outline-none">Todos</button>
+                    <button class="bg-gray-200 text-gray-700 py-2 px-4 rounded-full text-sm hover:bg-gray-300 focus:outline-none">Proveedores</button>
+                    <button class="bg-gray-200 text-gray-700 py-2 px-4 rounded-full text-sm hover:bg-gray-300 focus:outline-none">Servicios</button>
+                    <button class="bg-gray-200 text-gray-700 py-2 px-4 rounded-full text-sm hover:bg-gray-300 focus:outline-none">Financiero</button>
+                </div>
+            </div>
+
+            <!-- Cuadrícula de Aliados -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Tarjeta de Aliado 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img class="h-48 w-full object-cover" src="https://placehold.co/400x250/a0aec0/ffffff?text=Consultoría" alt="Logo de Papelería El Buen Surtido">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Consultoría</div>
+                        <h3 class="block mt-1 text-lg leading-tight font-bold text-black">CARRILLO GAMBOA & ASOCIADOS</h3>
+                        <p class="mt-2 text-gray-600">Obtén un <span class="font-bold text-green-600">15% de descuento</span> en tu primer asesoria.</p>
+                        <button class="mt-4 bg-indigo-500 text-white py-2 px-4 rounded-full hover:bg-indigo-600">Ver más</button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Aliado 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img class="h-48 w-full object-cover" src="https://placehold.co/400x250/4a5568/ffffff?text=Servicios+Analíticos" alt="Logo de Asesoría Contable Velázquez">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Servicios analíticos</div>
+                        <h3 class="block mt-1 text-lg leading-tight font-bold text-black">RAPHA</h3>
+                        <p class="mt-2 text-gray-600">Obten <span class="font-bold text-green-600">10% de descuento</span> en tu primer servicio.</p>
+                        <button class="mt-4 bg-indigo-500 text-white py-2 px-4 rounded-full hover:bg-indigo-600">Ver más</button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Aliado 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img class="h-48 w-full object-cover" src="https://placehold.co/400x250/f56565/ffffff?text=Créditos" alt="Logo de Microcréditos Confianza">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Financiero</div>
+                        <h3 class="block mt-1 text-lg leading-tight font-bold text-black">Microcréditos Confianza</h3>
+                        <p class="mt-2 text-gray-600">Accede a una <span class="font-bold text-green-600">tasa de interés preferencial</span> por ser miembro de ArrancaYa. ¡Impulsa tu crecimiento!</p>
+                        <button class="mt-4 bg-indigo-500 text-white py-2 px-4 rounded-full hover:bg-indigo-600">Ver más</button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Aliado 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img class="h-48 w-full object-cover" src="https://placehold.co/400x250/ed8936/ffffff?text=Impresiones" alt="Logo de Impresiones Rápidas">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Proveedores</div>
+                        <h3 class="block mt-1 text-lg leading-tight font-bold text-black">Impresiones Rápidas</h3>
+                        <p class="mt-2 text-gray-600">Aprovecha un <span class="font-bold text-green-600">20% de descuento</span> en lonas, volantes y todo tu material publicitario.</p>
+                        <button class="mt-4 bg-indigo-500 text-white py-2 px-4 rounded-full hover:bg-indigo-600">Ver más</button>
+                    </div>
+                </div>
+
+                 <!-- Tarjeta de Aliado 5 (Ventas) -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img class="h-48 w-full object-cover" src="https://placehold.co/400x250/4299e1/ffffff?text=Ventas" alt="Logo de Capacitación en Ventas">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Servicios</div>
+                        <h3 class="block mt-1 text-lg leading-tight font-bold text-black">Capacitación en Ventas "Cierra Más"</h3>
+                        <p class="mt-2 text-gray-600">Aprende técnicas de venta efectivas con expertos. Tu <span class="font-bold text-green-600">primera clase es GRATIS</span>.</p>
+                        <button class="mt-4 bg-indigo-500 text-white py-2 px-4 rounded-full hover:bg-indigo-600">Ver más</button>
+                    </div>
+                </div>
+
+                 <!-- Tarjeta de Aliado 6 (Marketing) -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img class="h-48 w-full object-cover" src="https://placehold.co/400x250/9f7aea/ffffff?text=Marketing" alt="Logo de Agencia de Marketing">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Servicios</div>
+                        <h3 class="block mt-1 text-lg leading-tight font-bold text-black">Agencia de Marketing "Impulso Online"</h3>
+                        <p class="mt-2 text-gray-600">Obtén un <span class="font-bold text-green-600">30% de descuento</span> en tu primera campaña en redes sociales. ¡Atrae más clientes!</p>
+                        <button class="mt-4 bg-indigo-500 text-white py-2 px-4 rounded-full hover:bg-indigo-600">Ver más</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    
+    <footer class="text-center p-4 text-white/70 text-sm mt-auto">
+        © 2025 ArrancaYa. Todos los derechos reservados.
+    </footer>
+
+    <!-- JavaScript para la interactividad -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lógica del menú desplegable
+            const menuButton = document.getElementById('menuButton');
+            const menuDropdown = document.getElementById('menuDropdown');
+    
+            // Alternar la visibilidad del menú desplegable
+            if (menuButton) {
+                menuButton.addEventListener('click', (event) => {
+                    if (menuDropdown) {
+                        menuDropdown.classList.toggle('hidden');
+                    }
+                    event.stopPropagation();
+                });
+            }
+    
+            // Cerrar el menú desplegable si el usuario hace clic fuera de él
+            window.addEventListener('click', (event) => {
+                if (menuDropdown && menuButton) {
+                    if (!menuDropdown.contains(event.target) && !menuButton.contains(event.target)) {
+                        menuDropdown.classList.add('hidden');
+                    }
+                }
+            });
+            
+            // Lógica de la barra de búsqueda
+            const searchBar = document.getElementById('searchBar');
+            if (searchBar) {
+                searchBar.addEventListener('input', () => {
+                    console.log("Searching for: " + searchBar.value);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+

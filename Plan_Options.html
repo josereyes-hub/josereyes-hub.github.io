@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrancaYa</title>
+    <!-- CDN de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente de Google: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos CSS integrados -->
+    <style>
+        body {
+            background-image: url(/Landing_Page_Img_2.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .header-bg {
+            background-color: #d1dbeb;
+        }
+        /* Estilos para el modal */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            text-align: left;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-gray-900 transition-colors duration-300 relative pt-56 md:pt-24">
+    
+    <!-- Encabezado reutilizable -->
+    <header class="fixed top-0 z-50 w-full py-4 px-6 shadow-md flex flex-col items-center md:flex-row md:justify-between header-bg gap-2 md:gap-4">
+        <!-- Línea 1: Título -->
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 flex-shrink-0">
+            <a href="index.html">
+                <span class="text-blue-500">Arranca</span><span class="text-orange-500">Ya</span>
+            </a>
+        </h2>
+        
+        <!-- Línea 2: Barra de búsqueda -->
+        <input type="search" id="searchBar" placeholder="¿Qué quieres aprender hoy?" class="w-full md:w-auto md:flex-grow px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:border-indigo-500 transition-colors duration-200 min-w-0">
+    
+        <!-- Línea 3: Buttons & Menu -->
+        <div class="flex items-center justify-center md:justify-end w-full md:w-auto gap-4 flex-wrap">
+            <!-- User Level Info -->
+            <div class="text-base font-semibold text-gray-700 whitespace-nowrap">
+                <a href="Rewards.html" class="hover:underline">
+                    Tú nivel: <span class="font-bold text-green-600">Primeros pasos</span>
+                </a>
+            </div>
+             <!-- Menú desplegable principal -->
+            <div class="relative">
+                <!-- Botón del menú -->
+                <button id="menuButton" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full focus:outline-none flex items-center space-x-2">
+                    <div class="space-y-1">
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                    </div>
+                    <span class="text-sm md:text-base">Menú</span>
+                </button>
+                <!-- Contenido del menú -->
+                <div id="menuDropdown" class="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 hidden z-50">
+                    <a href="Profile.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mi Perfil</a>
+                    <a href="Allies.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Los que te impulsan</a>
+                    <a href="Rewards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">¡Tu camino recorrido!</a>
+                    <a href="Finance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lo que ganas y gastas</a>
+                    <a href="Main_Options.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lo básico para empezar</a>
+                    <hr class="my-1">
+                    <a href="Courses.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cursos</a>
+                    <a href="Advice.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Asesorías</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal con los planes -->
+    <main class="flex-grow flex items-center justify-center p-4 sm:p-8">
+        <div class="w-full max-w-6xl flex flex-col items-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Nuestros planes para ti</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
+                <!-- Plan Gratuito -->
+                <div class="bg-white/75 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                    <h2 class="text-2xl font-bold mb-2">Gratis</h2>
+                    <p class="text-gray-600 mb-4">Empieza hoy mismo sin costo. Perfecto para probar.</p>
+                    <p class="text-4xl font-extrabold mb-4">$0 <span class="text-lg font-normal text-gray-500">/ mes</span></p>
+                    <ul class="text-sm text-gray-700 space-y-2 mb-6 text-left w-full">
+                        <li>✅ Consejos básicos para tu negocio</li>
+                        <li>✅ Acceso a videos cortos (tips para tu negocio) limitado*</li>
+                        <li>✅ Escaneo de tickets limitado*</li>
+                        <li>✅ Acceso a cursos limitado*</li>
+                        <li>❌ Consultas con expertos</li>
+                    </ul>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors duration-200 mt-auto">
+                        Continua gratis
+                    </button>
+                </div>
+
+                <!-- Plan Básico -->
+                <div class="bg-white/75 p-6 rounded-xl shadow-lg flex flex-col items-center text-center border-4 border-orange-500">
+                    <h2 class="text-2xl font-bold mb-2">Básico</h2>
+                    <p class="text-gray-600 mb-4">El empujón que tu negocio necesita para crecer.</p>
+                    <p class="text-4xl font-extrabold mb-4">$39 <span class="text-lg font-normal text-gray-500">/ mes</span></p>
+                    <ul class="text-sm text-gray-700 space-y-2 mb-6 text-left w-full">
+                        <li>✅ Todo lo del plan Gratis sin limites*</li>
+                        <li>✅ 2 Asesorías personalizadas con expertos (por mes)</li>
+                        <li>✅ Análisis financiero básico</li>
+                        <li>❌ Soporte 24/7</li>
+                    </ul>
+                    <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors duration-200 mt-auto">
+                        Empieza ahora
+                    </button>
+                </div>
+
+                <!-- Plan Premium -->
+                <div class="bg-white/75 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                    <h2 class="text-2xl font-bold mb-2">Premium</h2>
+                    <p class="text-gray-600 mb-4">Toda la ayuda que necesitas para tu negocio.</p>
+                    <p class="text-4xl font-extrabold mb-4">$99 <span class="text-lg font-normal text-gray-500">/ mes</span></p>
+                    <ul class="text-sm text-gray-700 space-y-2 mb-6 text-left w-full">
+                        <li>✅ Todo lo del plan Básico</li>
+                        <li>✅ 5 Asesorías personalizadas con expertos (por mes)</li>
+                        <li>✅ Análisis financiero avanzado</li>
+                        <li>✅ Soporte 24/7</li>
+                    </ul>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors duration-200 mt-auto">
+                        Contrátalo
+                    </button>
+                </div>
+            </div>
+             <p class="mt-4 text-sm text-gray-600 text-center">
+                * Ver terminos y condiciones del servicio
+            </p>
+        </div>
+    </main>
+
+    <!-- JavaScript para la interactividad -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lógica del menú desplegable
+            const dropdownButton = document.getElementById('dropdownButton');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+    
+            // Alternar la visibilidad del menú desplegable
+            if (dropdownButton) {
+                dropdownButton.addEventListener('click', (event) => {
+                    if (dropdownMenu) {
+                        dropdownMenu.classList.toggle('hidden');
+                    }
+                    event.stopPropagation();
+                });
+            }
+    
+            // Cerrar el menú desplegable si el usuario hace clic fuera de él
+            window.addEventListener('click', (event) => {
+                if (dropdownMenu && dropdownButton) {
+                    if (!dropdownMenu.contains(event.target) && !dropdownButton.contains(event.target)) {
+                        dropdownMenu.classList.add('hidden');
+                    }
+                }
+            });
+            
+            // Lógica de los botones del header
+            const searchBar = document.getElementById('searchBar');
+            const profileButton = document.getElementById('profileButton');
+            const mainOptionsButton = document.getElementById('mainOptionsButton');
+    
+            if (profileButton) {
+                profileButton.addEventListener('click', () => {
+                    alert('El botón de Mi perfil ha sido presionado.');
+                });
+            }
+
+            if (mainOptionsButton) {
+                mainOptionsButton.addEventListener('click', () => {
+                    window.location.href = 'Main_Options.html';
+                });
+            }
+    
+            if (searchBar) {
+                searchBar.addEventListener('input', () => {
+                    console.log("Searching for: " + searchBar.value);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+

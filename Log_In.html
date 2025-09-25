@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrancaYa</title>
+    <!-- CDN de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente de Google: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos CSS integrados -->
+    <style>
+        body {
+            background-image: url(/Landing_Page_Img_2.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .header-bg {
+            background-color: #d1dbeb;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-gray-900 transition-colors duration-300 relative pt-40 md:pt-24">
+    
+    <!-- Encabezado reutilizable -->
+    <header class="fixed top-0 z-50 w-full py-4 px-6 shadow-md flex flex-col items-center md:flex-row md:justify-between header-bg gap-2 md:gap-4">
+        <!-- Línea 1: Título -->
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 flex-shrink-0">
+            <a href="index.html">
+                <span class="text-blue-500">Arranca</span><span class="text-orange-500">Ya</span>
+            </a>
+        </h2>
+        
+        <!-- Línea 2: Barra de búsqueda -->
+        <input type="search" id="searchBar" placeholder="¿Qué quieres aprender hoy?" class="w-full md:w-auto md:flex-grow px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:border-indigo-500 transition-colors duration-200 min-w-0">
+    
+        <!-- Línea 3: Botones de Acción -->
+        <div class="flex items-center justify-center md:justify-end w-full md:w-auto gap-2 md:gap-4">
+
+            <!-- Botón "Inicia Sesión" -->
+            <a href="Log_in.html" class="bg-transparent hover:bg-green-100 text-green-700 font-bold py-2 px-4 rounded-full border border-green-700 focus:outline-none text-sm">
+                 Inicia Sesión
+            </a>
+        
+            <!-- Menú desplegable principal -->
+            <div class="relative">
+                <!-- Botón del menú -->
+                <button id="menuButton" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full focus:outline-none flex items-center space-x-2">
+                    <div class="space-y-1">
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                        <span class="block w-5 h-0.5 bg-white"></span>
+                    </div>
+                    <span class="text-sm md:text-base">Menú</span>
+                </button>
+                <!-- Contenido del menú -->
+                <div id="menuDropdown" class="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 hidden z-50">
+                    <a href="Profile.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mi Perfil</a>
+                    <a href="Rewards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">¡Tu camino recorrido!</a>
+                    <a href="Allies.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Los que te impulsan</a>
+                    <a href="Main_Options.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Opciones Principales</a>
+                    <a href="Finance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lo que ganas y gastas</a>
+                    <hr class="my-1">
+                    <a href="Courses.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Capacítate fácil</a>
+                    <a href="Advice.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Orientación fácil</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenedor del contenido principal -->
+    <main class="relative z-10 flex-grow flex flex-col items-center justify-center p-4">
+        <div class="bg-white/75 p-8 md:p-12 rounded-2xl shadow-2xl text-center w-full max-w-lg">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-900">Para iniciar sesión ingresa los siguientes datos</h2>
+            <form id="contactForm" class="flex flex-col space-y-8 md:space-y-12">
+                <input type="email" id="email" placeholder="Tu correo electrónico" class="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-700">
+                <input type="password" id="password" placeholder="Contraseña" class="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-700">
+                
+                <button type="submit" id="submitButton" disabled class="bg-green-700 hover:bg-green-800 text-white font-bold py-4 px-8 rounded-full shadow-lg transition transform hover:scale-105 duration-300 focus:outline-none focus:ring-4 focus:ring-green-700 focus:ring-opacity-50">
+                    Inicia Sesión
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- JavaScript para la interactividad -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lógica del menú desplegable
+            const dropdownButton = document.getElementById('dropdownButton');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+    
+            // Alternar la visibilidad del menú desplegable
+            if (dropdownButton) {
+                dropdownButton.addEventListener('click', (event) => {
+                    if (dropdownMenu) {
+                        dropdownMenu.classList.toggle('hidden');
+                    }
+                    event.stopPropagation();
+                });
+            }
+    
+            // Cerrar el menú desplegable si el usuario hace clic fuera de él
+            window.addEventListener('click', (event) => {
+                if (dropdownMenu && dropdownButton) {
+                    if (!dropdownMenu.contains(event.target) && !dropdownButton.contains(event.target)) {
+                        dropdownMenu.classList.add('hidden');
+                    }
+                }
+            });
+            
+            // Lógica de los nuevos botones
+            const searchBar = document.getElementById('searchBar');
+    
+            // Lógica de la barra de búsqueda
+            if (searchBar) {
+                searchBar.addEventListener('input', () => {
+                    console.log("Searching for: " + searchBar.value);
+                });
+            }
+
+            // Lógica del formulario de inicio de sesión
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const submitButton = document.getElementById('submitButton');
+            const contactForm = document.getElementById('contactForm');
+            
+            // Función para validar los campos del formulario
+            const validateForm = () => {
+                const emailValid = emailInput.value.trim() !== '';
+                const passwordValid = passwordInput.value.trim() !== '';
+                
+                const isFormValid = emailValid && passwordValid;
+                submitButton.disabled = !isFormValid;
+                submitButton.style.opacity = isFormValid ? '1' : '0.5';
+            };
+            
+            // Deshabilitar el botón por defecto y hacerlo semi-transparente
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.style.opacity = '0.5';
+            }
+
+            // Añadir listeners a los campos para validar en tiempo real
+            if (emailInput) emailInput.addEventListener('input', validateForm);
+            if (passwordInput) passwordInput.addEventListener('input', validateForm);
+
+
+            // Manejar el envío del formulario y la redirección
+            if (contactForm) {
+                contactForm.addEventListener('submit', (event) => {
+                    event.preventDefault(); // Prevenir el envío tradicional del formulario
+                    if (!submitButton.disabled) {
+                        // Si el botón no está deshabilitado, redirigir
+                        window.location.href = 'Main_Options.html';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
